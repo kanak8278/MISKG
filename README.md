@@ -158,4 +158,4 @@ To fully utilize this dataset, you'll need to connect information across multipl
 
 ## License
 
-This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License - see the [LICENSE & TERMS OF USE](LICENSE) for details.
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License - see the [LICENSE & TERMS OF USE](LICENSE.md) for details.
