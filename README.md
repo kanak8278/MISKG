@@ -4,6 +4,9 @@
 
 Ingredient substitution is essential in adapting recipes to meet individual dietary needs, preferences, and ingredient availability. We introduce a Multimodal Ingredient Substitution Knowledge Graph (MISKG) that captures a comprehensive and contextual understanding of 16,077 ingredients and 80,110 substitution pairs. The KG integrates semantic, nutritional, and flavor data, allowing both text and image-based querying for ingredient substitutions. Utilizing various sources such as ConceptNet, Wikidata, Edamam, and FlavorDB, this dataset supports personalized recipe adjustments based on dietary constraints, health labels, and sensory preferences. This work addresses gaps in existing datasets by including visual representations, nutrient information, contextual ingredient relationships, providing a valuable resource for culinary research and digital gastronomy.
 
+## Dataset
+The dataset can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1AnFbH61D9OjAMPPQio2BI9Y-uEc3Hc6_) or [Kaggle](https://www.kaggle.com/datasets/kanakraj/multimodal-ingredient-substitution/)
+
 ## File Descriptions and Purposes
 
 1. **competition/original_ingredients_with_id.csv**
