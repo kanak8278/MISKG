@@ -1,6 +1,6 @@
 # Multimodal Ingredient Substitution Knowledge Graph for Personalized Dietary Recommendations (MISKG)
 
-### Abstract
+## Abstract
 
 Ingredient substitution is essential in adapting recipes to meet individual dietary needs, preferences, and ingredient availability. We introduce a Multimodal Ingredient Substitution Knowledge Graph (MISKG) that captures a comprehensive and contextual understanding of 16,077 ingredients and 80,110 substitution pairs. The KG integrates semantic, nutritional, and flavor data, allowing both text and image-based querying for ingredient substitutions. Utilizing various sources such as ConceptNet, Wikidata, Edamam, and FlavorDB, this dataset supports personalized recipe adjustments based on dietary constraints, health labels, and sensory preferences. This work addresses gaps in existing datasets by including visual representations, nutrient information, contextual ingredient relationships, providing a valuable resource for culinary research and digital gastronomy.
 
@@ -133,6 +133,38 @@ Ingredient substitution is essential in adapting recipes to meet individual diet
      }
      ```
 
+10. **competition/images/**
+
+- Purpose: Contains multiple visual representations for each ingredient from processed_ingredients_with_id.csv
+- Structure: Organized by processed_id with multiple images per ingredient
+- Format: JPG/PNG files
+- Content: Up to 5 different images per ingredient showcasing various views/preparations
+
+   ```
+   competition/images/
+   ├── a5bd8077/               # Ingredient folder (processed_id)
+   │   ├── 0.jpg              # First image perspective
+   │   ├── 1.jpg              # Second image perspective
+   │   ├── 2.jpg              # Third image perspective
+   │   ├── 3.jpg              # Fourth image perspective
+   │   └── 4.jpg              # Fifth image perspective
+   │
+   ├── b8b2e121/              # Another ingredient folder
+   │   ├── 0.jpg
+   │   ├── 1.jpg
+   │   ├── 2.jpg
+   │   ├── 3.jpg
+   │   └── 4.jpg
+   │
+   └── ...                    # Additional ingredient folders
+   ```
+
+- Specifications:
+  - Each ingredient has its own directory named with its processed_id
+  - Contains up to 5 images per ingredient (0.jpg to 4.jpg)
+  - Images showcase different angles, preparations, or variations of the ingredient
+  - Consistent naming convention: numerical index from 0 to 4
+
 ## Connecting the Data
 
 To fully utilize this dataset, you'll need to connect information across multiple files. Here's a step-by-step guide:
@@ -147,12 +179,34 @@ To fully utilize this dataset, you'll need to connect information across multipl
    - Recipe connections from `processed_id_recipe1m_map.json`
    - Encyclopedic information from `wikidata_data.json`
    - Semantic relationships from `conceptnet.json`
+   - Visual representations from the images folder:
+     - Access multiple views: `images/{processed_id}/{index}.jpg` where index ranges from 0 to 4
+     - Each ingredient has up to 5 different visual perspectives
+     - Images can be used for visual similarity comparison and ingredient identification.
 
 3. For substitutions:
    - Use `substitution_pairs.json` to find potential substitutes for your ingredient.
    - Each substitute will have its own processed_id, which you can use to gather its information following steps 1-2.
 
 ## Complete Data Relationship Diagram
+
+```mermaid
+graph TD
+    A[original_ingredients_with_id.csv] -->|original_id| B[original_to_processed_mapping.csv]
+    B -->|processed_id| C[processed_ingredients_with_id.csv]
+    C -->|processed_id| D[edamam.json]
+    C -->|processed_id| E[ingredient_to_flavordb.json]
+    C -->|processed_id| F[processed_id_recipe1m_map.json]
+    C -->|processed_id| G[wikidata_data.json]
+    C -->|processed_id| H[conceptnet.json]
+    C -->|ingredient_processed_id| I[substitution_pairs.json]
+    C -->|processed_id| N[images/]
+    I -->|substitution_processed_id| C
+    F -->|recipe_ids| J[Recipe1M Dataset]
+    E -->|flavordb_id| K[FlavorDB]
+    G -->|wikidata_id| L[Wikidata]
+    H -->|conceptnet_id| M[ConceptNet]
+```
 
 ![alt text](image.png)
 
