@@ -215,8 +215,6 @@ graph TD
     H -->|conceptnet_id| M[ConceptNet]
 ```
 
-![alt text](image.png)
-
 ## License
 
 This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License - see the [LICENSE & TERMS OF USE](LICENSE.md) for details.
