@@ -5,11 +5,11 @@
 
 ## Abstract
 
-Ingredient substitution is essential in adapting recipes to meet individual dietary needs, preferences, and ingredient availability. We introduce a Multimodal Ingredient Substitution Knowledge Graph (MISKG) that captures a comprehensive and contextual understanding of 16,077 ingredients and 80,110 substitution pairs. The KG integrates semantic, nutritional, and flavor data, allowing both text and image-based querying for ingredient substitutions. Utilizing various sources such as ConceptNet, Wikidata, Edamam, and FlavorDB, this dataset supports personalized recipe adjustments based on dietary constraints, health labels, and sensory preferences. This work addresses gaps in existing datasets by including visual representations, nutrient information, contextual ingredient relationships, providing a valuable resource for culinary research and digital gastronomy.
+Ingredient substitution is essential in adapting recipes to meet individual dietary needs, preferences, and ingredient availability. We introduce a Multimodal Ingredient Substitution Knowledge Grap[...]
 
 ## Dataset
 
-The dataset can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1AnFbH61D9OjAMPPQio2BI9Y-uEc3Hc6_) or [Kaggle](https://www.kaggle.com/datasets/kanakraj/multimodal-ingredient-substitution/)
+The dataset can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1AnFbH61D9OjAMPPQio2BI9Y-uEc3Hc6_) or [Kaggle](https://www.kaggle.com/datasets/kanakraj/multimodal-ingredie[...]
 
 ## File Descriptions and Purposes
 
@@ -218,3 +218,16 @@ graph TD
 ## License
 
 This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License - see the [LICENSE & TERMS OF USE](LICENSE.md) for details.
+
+## Citation
+
+If you use this work, please cite as:
+
+```latex
+@misc{kanak2023miskg,
+  author = {Kanak Raj and Revathy Venkataramanan and Deeptansh Sharma and Hyunwook Kim and Amit Sheth},
+  title = {Multimodal Ingredient Substitution Knowledge Graph},
+  year = {2023},
+  howpublished = {\url{https://github.com/kanak8278/MISKG}},
+}
+```
